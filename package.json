@@ -15,5 +15,13 @@
     "prettier": "^3.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2"
+  },
+  "scripts": {
+    "cli": "ts-node src/cli.ts",
+    "test": "jest",
+    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist build",
+    "ts-node": "ts-node"
   }
 }
