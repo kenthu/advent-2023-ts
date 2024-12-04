@@ -54,21 +54,25 @@ const sumOfFixedValues = (filename: string, reFirstDigit: RegExp, reLastDigit: R
 };
 
 // Part 1 test
-console.log(sumOfFixedValues('day01/test-input-1.txt', RE_FIRST_DIGIT, RE_LAST_DIGIT));
+console.log(sumOfFixedValues('src/day01/test-input-1.txt', RE_FIRST_DIGIT, RE_LAST_DIGIT));
 // 142
 
 // Part 1
-console.log(sumOfFixedValues('day01/input.txt', RE_FIRST_DIGIT, RE_LAST_DIGIT));
+console.log(sumOfFixedValues('src/day01/input.txt', RE_FIRST_DIGIT, RE_LAST_DIGIT));
 // 54667
 
 // Part 2 test
 console.log(
-  sumOfFixedValues('day01/test-input-2.txt', RE_FIRST_DIGIT_WITH_WORDS, RE_LAST_DIGIT_WITH_WORDS),
+  sumOfFixedValues(
+    'src/day01/test-input-2.txt',
+    RE_FIRST_DIGIT_WITH_WORDS,
+    RE_LAST_DIGIT_WITH_WORDS,
+  ),
 );
 // 281
 
 // Part 2
 console.log(
-  sumOfFixedValues('day01/input.txt', RE_FIRST_DIGIT_WITH_WORDS, RE_LAST_DIGIT_WITH_WORDS),
+  sumOfFixedValues('src/day01/input.txt', RE_FIRST_DIGIT_WITH_WORDS, RE_LAST_DIGIT_WITH_WORDS),
 );
 // 54203

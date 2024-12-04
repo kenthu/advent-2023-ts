@@ -121,17 +121,17 @@ const sumOfGearRatios = (filename: string): number => {
 };
 
 // Part 1 test
-console.log(sumOfPartNumbers('day03/test-input.txt'));
+console.log(sumOfPartNumbers('src/day03/test-input.txt'));
 // 4361
 
 // Part 1
-console.log(sumOfPartNumbers('day03/input.txt'));
+console.log(sumOfPartNumbers('src/day03/input.txt'));
 // 529618
 
 // Part 2 test
-console.log(sumOfGearRatios('day03/test-input.txt'));
+console.log(sumOfGearRatios('src/day03/test-input.txt'));
 // 467835
 
 // Part 2
-console.log(sumOfGearRatios('day03/input.txt'));
+console.log(sumOfGearRatios('src/day03/input.txt'));
 // 77509019

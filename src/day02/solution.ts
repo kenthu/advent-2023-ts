@@ -92,17 +92,17 @@ const sumOfPowersOfMinSets = (filename: string): number => {
 };
 
 // Part 1 test
-console.log(sumOfIdsOfValidGames('day02/test-input.txt'));
+console.log(sumOfIdsOfValidGames('src/day02/test-input.txt'));
 // 8
 
 // Part 1
-console.log(sumOfIdsOfValidGames('day02/input.txt'));
+console.log(sumOfIdsOfValidGames('src/day02/input.txt'));
 // 2771
 
 // Part 2 test
-console.log(sumOfPowersOfMinSets('day02/test-input.txt'));
+console.log(sumOfPowersOfMinSets('src/day02/test-input.txt'));
 // 2286
 
 // Part 2
-console.log(sumOfPowersOfMinSets('day02/input.txt'));
+console.log(sumOfPowersOfMinSets('src/day02/input.txt'));
 // 70924
