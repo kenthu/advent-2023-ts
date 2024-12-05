@@ -31,11 +31,10 @@ const ingestCards = (filename: string): Card[] => {
  * Split a string of numbers up to 2 digits (like ' 69 82 63 72 16 21 14  1')
  */
 const splitNums = (input: string): number[] => {
-  const output: number[] = [];
-  for (let i = 0; i < input.length / 3; i++) {
-    output.push(Number(input.slice(i * 3, i * 3 + 3)));
-  }
-  return output;
+  return input
+    .split(' ')
+    .filter((maybeNum) => maybeNum !== '')
+    .map((numAsString) => Number(numAsString));
 };
 
 const calculatePoints = (filename: string): number => {
