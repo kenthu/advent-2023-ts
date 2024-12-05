@@ -3,12 +3,10 @@ import { readLines } from 'lib/input';
 const cardRegex = /^Card(?: +)\d+:([\d ]+) \|([\d ]+)$/;
 
 interface Card {
-  winningNums: Set<number>;
-  cardNumbers: Set<number>;
   numMatches: number;
 }
 
-const ingestCards = (filename: string): Card[] => {
+const processCards = (filename: string): Card[] => {
   const rows = readLines(filename);
 
   return rows.map((row) => {
@@ -20,8 +18,6 @@ const ingestCards = (filename: string): Card[] => {
     const cardNumbers = new Set(splitNums(matches[2]));
 
     return {
-      winningNums,
-      cardNumbers,
       numMatches: winningNums.intersection(cardNumbers).size,
     };
   });
@@ -38,7 +34,7 @@ const splitNums = (input: string): number[] => {
 };
 
 const calculatePoints = (filename: string): number => {
-  const cards = ingestCards(filename);
+  const cards = processCards(filename);
 
   return cards.reduce((acc, { numMatches }) => {
     if (numMatches > 0) {
@@ -49,6 +45,28 @@ const calculatePoints = (filename: string): number => {
   }, 0);
 };
 
+const countCards = (filename: string): number => {
+  const cards = processCards(filename);
+
+  const cardCounts: Record<number, number> = {};
+  // Start with one of each card
+  for (let i = 0; i < cards.length; i++) {
+    cardCounts[i] = 1;
+  }
+
+  for (let i = 0; i < cards.length; i++) {
+    const currentCardCount = cardCounts[i];
+
+    const currentMatches = cards[i].numMatches;
+    // If have n matches, increment the next n cards by currentCardCount
+    for (let indexToIncrement = i + 1; indexToIncrement <= i + currentMatches; indexToIncrement++) {
+      cardCounts[indexToIncrement] += currentCardCount;
+    }
+  }
+
+  return Object.values(cardCounts).reduce((acc, count) => acc + count, 0);
+};
+
 // Part 1 test
 console.log(calculatePoints('src/day04/test-input.txt'));
 // 13
@@ -56,3 +74,11 @@ console.log(calculatePoints('src/day04/test-input.txt'));
 // Part 1
 console.log(calculatePoints('src/day04/input.txt'));
 // 24706
+
+// Part 2 test
+console.log(countCards('src/day04/test-input.txt'));
+// 30
+
+// Part 2
+console.log(countCards('src/day04/input.txt'));
+// 13114317
