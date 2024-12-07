@@ -5,6 +5,7 @@
   "author": "Kent Hu <kenthu@kenthu.net>",
   "license": "MIT",
   "devDependencies": {
+    "@types/lodash": "^4.17.13",
     "@types/node": "^20.10.3",
     "@typescript-eslint/eslint-plugin": "^6.13.1",
     "@typescript-eslint/parser": "^6.13.1",
@@ -23,5 +24,8 @@
     "build": "tsc -p tsconfig.json",
     "clean": "rm -rf dist build",
     "ts-node": "ts-node"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
