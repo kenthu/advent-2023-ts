@@ -130,7 +130,7 @@ const part1 = (filename: string): number => {
 const isValidRange = (factorRange: FactorRange): boolean =>
   factorRange.rangeStart <= factorRange.rangeEnd;
 
-const applyAlmanacRange = (
+export const applyAlmanacRange = (
   almanacRange: AlmanacRange,
   inputRange: FactorRange,
 ): {
